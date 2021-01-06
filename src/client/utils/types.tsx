@@ -5,3 +5,9 @@ export interface IBlog {
     authorid: number;
     created_at: Date;
 }
+
+export interface ITag {
+    id: number;
+    name: string;
+    created_at?: Date;
+}

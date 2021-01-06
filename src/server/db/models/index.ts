@@ -15,6 +15,12 @@ export interface TBlogs {
     created_at?: Date;
 }
 
+export interface TTags {
+    id?: string;
+    name?: string;
+    created_at?: Date;
+}
+
 export interface CannedResponse {
     insertId?: number;
     affectedRows?: number;

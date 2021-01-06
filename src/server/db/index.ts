@@ -2,6 +2,8 @@ import * as mysql from 'mysql';
 import config from '../config';
 import authors from './queries/authors';
 import blogs from './queries/blogs';
+import blogtags from './queries/blogtags';
+import tags from './queries/tags';
 
 const pool = mysql.createPool(config.mysql);
 
@@ -21,5 +23,7 @@ export const Query = <T = any>(query: string, values?: any) => {
 }
 export default {
     authors,
-    blogs
+    blogs,
+    blogtags,
+    tags
 }

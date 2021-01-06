@@ -14,6 +14,10 @@ export default async <T = any>(uri: string, method: string = 'GET', body?: {}) =
         options.body = JSON.stringify(body);
     }
 
+    if (Token) {
+        headers.append('Authorization', `Bearer ${Token}`);
+    }
+
     try {
         const res = await fetch(uri, options)
 
