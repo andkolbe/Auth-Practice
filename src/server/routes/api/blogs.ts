@@ -21,7 +21,7 @@ router.get('/:id?', async (req, res) => {
     }
 });
 
-router.post('/', passport.authenticate('jwt') ,async (req, res) => {
+router.post('/', passport.authorize('jwt') ,async (req, res) => {
     const BlogDTO = req.body;
     try {
         BlogDTO.authorid = 1;
@@ -32,7 +32,7 @@ router.post('/', passport.authenticate('jwt') ,async (req, res) => {
     }
 });
 
-router.put('/:id', passport.authenticate('jwt') ,async (req, res) => {
+router.put('/:id', passport.authorize('jwt') ,async (req, res) => {
     try {
         const id = Number(req.params.id);
         const blogDTO = req.body;
@@ -44,7 +44,7 @@ router.put('/:id', passport.authenticate('jwt') ,async (req, res) => {
     }
 });
 
-router.delete('/:id', passport.authenticate('jwt') ,async (req, res) => {
+router.delete('/:id', passport.authorize('jwt') ,async (req, res) => {
     try {
         const id = Number(req.params.id);
         await db.blogs.destroy(id);

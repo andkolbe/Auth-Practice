@@ -16,5 +16,8 @@ export default {
     auth: {
         secret: process.env.JWT_SECRET,
         expires: process.env.JWT_EXPIRES
+    },
+    keys: {
+        stripe: process.env.STRIPE_KEY
     }
 }
